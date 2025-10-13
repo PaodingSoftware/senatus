@@ -1,5 +1,7 @@
 # Senatus Framework
 
+![Senatus Framework](senatus.png)
+
 **Senatus** 是一个规范驱动开发框架，专为软件开发中的需求分析、讨论、研究和实施提供完整的工作流程。该框架通过系统化的命令和模板，帮助开发者从初始想法到最终实现进行有序的项目管理。
 
 支持的 AI 编程助手：
