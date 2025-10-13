@@ -37,6 +37,7 @@ description: 根据用户反馈对项目进行纠正并记录
      **问题**: [用户提出的纠正要求]
      **结论**: [执行的纠正操作和结果]
      ```
+   - **注意**：记录中不要引用行动编号，避免回滚时产生歧义
 
 7. **更新行动计划**:
    - 读取 `specify/{当前主题目录}/plan.md` 文件
@@ -49,7 +50,7 @@ description: 根据用户反馈对项目进行纠正并记录
 
 8. **生成实现记录**:
    - 在 `specify/{当前主题目录}/` 下创建 `implementation/` 目录（如不存在）
-   - 读取模板文件 `.specify/templates/implementation-template.md`
+   - 读取模板文件 `.specify/implementation-template.md`
    - 替换模板占位符：
      - `{{ACTION_ID}}` → 行动编号
      - `{{ACTION_DESCRIPTION}}` → 纠正操作描述

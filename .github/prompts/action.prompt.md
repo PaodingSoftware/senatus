@@ -42,7 +42,7 @@ description: 自动识别当前进度并继续执行下一个行动
 8. **生成实现记录**:
    - 为每个已完成行动生成实现记录：
      * 在 `specify/{当前主题目录}/` 下创建 `implementation/` 目录（如不存在）
-     * 读取模板文件 `.specify/templates/implementation-template.md`
+     * 读取模板文件 `.specify/implementation-template.md`
      * 替换模板占位符：
        - `{{ACTION_ID}}` → 行动编号
        - `{{ACTION_DESCRIPTION}}` → 行动描述

@@ -23,7 +23,7 @@ description: 对当前主题进行项目源码研究并更新研究报告
    - 分析技术栈、架构模式、代码风格
 
 5. **创建/更新研究报告**:
-   - 读取模板文件 `.specify/templates/research-template.md`
+   - 读取模板文件 `.specify/research-template.md`
    - 替换模板占位符：
      * `{{DISCUSS_FILE_PATH}}` → 关联的 discuss.md 文件路径
      * `{{CURRENT_DATE}}` → 当前日期（YYYY-MM-DD）

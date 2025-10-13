@@ -1,6 +1,10 @@
 # Senatus Framework
 
-**Senatus** 是一个基于 Claude Code 的规范驱动开发框架，专为软件开发中的需求分析、讨论、研究和实施提供完整的工作流程。该框架通过系统化的命令和模板，帮助开发者从初始想法到最终实现进行有序的项目管理。
+**Senatus** 是一个规范驱动开发框架，专为软件开发中的需求分析、讨论、研究和实施提供完整的工作流程。该框架通过系统化的命令和模板，帮助开发者从初始想法到最终实现进行有序的项目管理。
+
+支持的 AI 编程助手：
+- Claude Code
+- GitHub Copilot
 
 ## 核心理念
 
@@ -31,7 +35,7 @@ Senatus 遵循古罗马议会的决策模式，其核心在于**讨论和记录*
 ```
 senatus/
 ├── .claude/
-│   └── commands/           # Claude Code 命令定义
+│   └── commands/           # 自定义命令定义
 │       ├── action.md       # 执行行动项
 │       ├── collect.md      # 收集手动变更
 │       ├── constitution.md # 创建项目宪法
@@ -41,13 +45,23 @@ senatus/
 │       ├── new-topic.md    # 创建新讨论主题
 │       ├── plan.md         # 生成行动计划
 │       └── research.md     # 项目源码研究
-├── .specify/
-│   └── templates/          # 文档模板
-│       ├── discuss-template.md      # 讨论文档模板
-│       ├── research-template.md     # 研究报告模板
-│       ├── plan-template.md         # 行动计划模板
-│       ├── implementation-template.md # 实施记录模板
-│       └── constitution-template.md # 项目宪法模板
+├── .github/
+│   └── prompts/            # GitHub Copilot 提示词
+│       ├── action.prompt.md
+│       ├── collect.prompt.md
+│       ├── constitution.prompt.md
+│       ├── correct.prompt.md
+│       ├── discuss.prompt.md
+│       ├── inspire.prompt.md
+│       ├── new-topic.prompt.md
+│       ├── plan.prompt.md
+│       └── research.prompt.md
+├── .specify/               # 文档模板
+│   ├── discuss-template.md      # 讨论文档模板
+│   ├── research-template.md     # 研究报告模板
+│   ├── plan-template.md         # 行动计划模板
+│   ├── implementation-template.md # 实施记录模板
+│   └── constitution-template.md # 项目宪法模板
 └── specify/                # 工作目录（使用时生成）
     ├── constitution.md     # 项目约束宪法
     └── [编号]-[主题名]/    # 主题工作目录
@@ -61,12 +75,12 @@ senatus/
 ## 安装与配置
 
 ### 前置条件
-- 安装 [Claude Code](https://claude.com/claude-code)
-- 确保项目根目录包含 `.claude` 文件夹
+- 安装 AI 编程助手（[Claude Code](https://claude.com/claude-code) 或 [GitHub Copilot](https://github.com/features/copilot)）
+- 确保项目根目录包含 `.claude` 和/或 `.github` 文件夹
 
 ### 使用方式
 1. 将 Senatus 框架文件复制到你的项目根目录
-2. 在 Claude Code 中打开你的项目
+2. 在支持的 AI 编程助手中打开你的项目
 3. 框架将自动加载所有自定义命令
 
 ## 完整工作流程

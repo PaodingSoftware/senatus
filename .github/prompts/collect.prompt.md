@@ -29,8 +29,8 @@ description: 收集用户手动修改的代码变更并记录到行动计划
    - 识别潜在的风险或需要注意的事项
 
 6. **生成变更描述**:
-   - 基于代码变更自动生成描述
-   - 描述应清晰说明变更的目的和内容
+   - 基于代码变更自动生成简洁的描述
+   - 描述应概括变更的核心目的
 
 7. **更新行动计划**:
    - 读取 `specify/{当前主题目录}/plan.md` 文件
@@ -43,7 +43,7 @@ description: 收集用户手动修改的代码变更并记录到行动计划
 
 8. **生成实现记录**:
    - 在 `specify/{当前主题目录}/` 下创建 `implementation/` 目录（如不存在）
-   - 读取模板文件 `.specify/templates/implementation-template.md`
+   - 读取模板文件 `.specify/implementation-template.md`
    - 替换模板占位符：
      - `{{ACTION_ID}}` → 行动编号
      - `{{ACTION_DESCRIPTION}}` → 变更描述

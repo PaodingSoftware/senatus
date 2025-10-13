@@ -21,7 +21,7 @@ description: 创建一个新的讨论主题
 
 4. **创建讨论文件**:
    - 从用户输入中提取主题名和主题描述
-   - 读取模板文件 `.specify/templates/discuss-template.md`
+   - 读取模板文件 `.specify/discuss-template.md`
    - 替换模板占位符：
      * `{{TOPIC_NAME}}` → 主题名
      * `{{TOPIC_DESCRIPTION}}` → 主题描述
