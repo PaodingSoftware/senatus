@@ -38,26 +38,26 @@ Senatus 遵循古罗马议会的决策模式，其核心在于**讨论和记录*
 senatus/
 ├── .claude/
 │   └── commands/           # 自定义命令定义
-│       ├── implement.md    # 执行任务项（批量）
-│       ├── collect.md      # 收集手动变更
-│       ├── constitution.md # 创建项目宪法
-│       ├── correct.md      # 项目纠正
-│       ├── discuss.md      # 主题讨论
-│       ├── inspire.md      # 启发式讨论
-│       ├── new-topic.md    # 创建新讨论主题
-│       ├── plan.md         # 生成任务计划
-│       └── research.md     # 项目源码研究
+│       ├── senatus.implement.md    # 执行任务项（批量）
+│       ├── senatus.collect.md      # 收集手动变更
+│       ├── senatus.constitution.md # 创建项目宪法
+│       ├── senatus.correct.md      # 项目纠正
+│       ├── senatus.discuss.md      # 主题讨论
+│       ├── senatus.inspire.md      # 启发式讨论
+│       ├── senatus.new-topic.md    # 创建新讨论主题
+│       ├── senatus.plan.md         # 生成任务计划
+│       └── senatus.research.md     # 项目源码研究
 ├── .github/
 │   └── prompts/            # GitHub Copilot 提示词
-│       ├── implement.prompt.md
-│       ├── collect.prompt.md
-│       ├── constitution.prompt.md
-│       ├── correct.prompt.md
-│       ├── discuss.prompt.md
-│       ├── inspire.prompt.md
-│       ├── new-topic.prompt.md
-│       ├── plan.prompt.md
-│       └── research.prompt.md
+│       ├── senatus.implement.prompt.md
+│       ├── senatus.collect.prompt.md
+│       ├── senatus.constitution.prompt.md
+│       ├── senatus.correct.prompt.md
+│       ├── senatus.discuss.prompt.md
+│       ├── senatus.inspire.prompt.md
+│       ├── senatus.new-topic.prompt.md
+│       ├── senatus.plan.prompt.md
+│       └── senatus.research.prompt.md
 ├── .specify/               # 文档模板
 │   ├── discuss-template.md      # 讨论文档模板
 │   ├── research-template.md     # 研究报告模板
