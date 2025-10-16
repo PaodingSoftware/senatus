@@ -42,7 +42,7 @@ senatus/
 │       ├── senatus.collect.md      # 收集手动变更
 │       ├── senatus.constitution.md # 创建项目宪法
 │       ├── senatus.context.md      # 了解项目背景
-│       ├── senatus.correct.md      # 项目纠正
+│       ├── senatus.correct.md      # 修复问题
 │       ├── senatus.discuss.md      # 主题讨论
 │       ├── senatus.inspire.md      # 启发式讨论
 │       ├── senatus.new-topic.md    # 创建新讨论主题
@@ -151,15 +151,15 @@ senatus/
 - 更新任务计划中的状态
 - 可重复运行直到所有任务完成
 
-### 7. 项目纠正 (`/senatus.correct`)
+### 7. 修复问题 (`/senatus.correct`)
 ```bash
-/senatus.correct 修正用户认证模块的Session过期时间配置
+/senatus.correct 修复用户认证模块的Session过期时间配置
 ```
-- 根据用户反馈立即执行项目纠正
-- 自动记录纠正过程和结果
-- 在讨论记录中添加纠正条目
-- 在任务计划中添加已完成的纠正任务
-- 生成详细的纠正实施记录
+- 根据用户反馈立即执行问题修复
+- 自动记录修复过程和结果
+- 在讨论记录中添加修复条目
+- 在任务计划中添加已完成的修复任务
+- 生成详细的修复实施记录
 
 ### 8. 收集手动变更 (`/senatus.collect`)
 ```bash
@@ -223,19 +223,19 @@ git add .
 - 基于完整上下文理解项目现状
 - 严格遵循项目宪法约束
 
-### `/senatus.correct [纠正内容]` - 项目纠正
-**作用**：根据用户反馈对项目进行纠正
+### `/senatus.correct [问题描述]` - 修复问题
+**作用**：根据用户反馈修复项目问题
 
-**参数**：纠正内容（必需）
+**参数**：问题描述（必需）
 
 **输出**：
 - 更新的 `discuss.md`（新增讨论记录）
 - 更新的 `plan.md`（新增已完成任务）
-- `implementation/[任务编号].md`（纠正记录）
+- `implementation/[任务编号].md`（修复记录）
 
 **特点**：
-- 基于用户反馈进行精准纠正
-- 自动记录纠正过程和结果
+- 基于用户反馈进行精准修复
+- 自动记录修复过程和结果
 - 即时更新讨论和任务记录
 
 ### `/senatus.discuss [讨论内容]` - 主题讨论
@@ -341,8 +341,8 @@ git add .
 # 可重复执行直到所有任务完成
 /senatus.implement
 
-# 8. 纠正问题（如需要）
-/senatus.correct 修正用户认证模块的配置问题
+# 8. 修复问题（如需要）
+/senatus.correct 修复用户认证模块的配置问题
 
 # 9. 收集手动变更（如需要）
 # 手动修改代码...
