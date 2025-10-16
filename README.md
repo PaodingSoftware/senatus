@@ -41,6 +41,7 @@ senatus/
 │       ├── senatus.implement.md    # 执行任务项（批量）
 │       ├── senatus.collect.md      # 收集手动变更
 │       ├── senatus.constitution.md # 创建项目宪法
+│       ├── senatus.context.md      # 了解项目背景
 │       ├── senatus.correct.md      # 项目纠正
 │       ├── senatus.discuss.md      # 主题讨论
 │       ├── senatus.inspire.md      # 启发式讨论
@@ -52,6 +53,7 @@ senatus/
 │       ├── senatus.implement.prompt.md
 │       ├── senatus.collect.prompt.md
 │       ├── senatus.constitution.prompt.md
+│       ├── senatus.context.prompt.md
 │       ├── senatus.correct.prompt.md
 │       ├── senatus.discuss.prompt.md
 │       ├── senatus.inspire.prompt.md
@@ -210,6 +212,16 @@ git add .
 - 自动分析项目技术栈
 - 生成分类约束条款
 - 支持版本管理和历史记录
+
+### `/senatus.context` - 了解项目背景
+**作用**：综合了解项目背景，为后续讨论做准备
+
+**输出**：无
+
+**特点**：
+- 综合分析项目宪法、主题、研究报告和已有实现记录
+- 基于完整上下文理解项目现状
+- 严格遵循项目宪法约束
 
 ### `/senatus.correct [纠正内容]` - 项目纠正
 **作用**：根据用户反馈对项目进行纠正
