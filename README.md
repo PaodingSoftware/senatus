@@ -38,28 +38,32 @@ Senatus 遵循古罗马议会的决策模式，其核心在于**讨论和记录*
 senatus/
 ├── .claude/
 │   └── commands/           # 自定义命令定义
-│       ├── senatus.implement.md    # 执行任务项（批量）
 │       ├── senatus.collect.md      # 收集手动变更
 │       ├── senatus.constitution.md # 创建项目宪法
 │       ├── senatus.context.md      # 了解项目背景
 │       ├── senatus.correct.md      # 修复问题
 │       ├── senatus.discuss.md      # 主题讨论
+│       ├── senatus.dry-run.md      # 预演实现
+│       ├── senatus.implement.md    # 执行任务项（批量）
 │       ├── senatus.inspire.md      # 启发式讨论
 │       ├── senatus.new-topic.md    # 创建新讨论主题
 │       ├── senatus.plan.md         # 生成任务计划
-│       └── senatus.research.md     # 项目源码研究
+│       ├── senatus.research.md     # 项目源码研究
+│       └── senatus.summary.md      # 主题总结
 ├── .github/
 │   └── prompts/            # GitHub Copilot 提示词
-│       ├── senatus.implement.prompt.md
 │       ├── senatus.collect.prompt.md
 │       ├── senatus.constitution.prompt.md
 │       ├── senatus.context.prompt.md
 │       ├── senatus.correct.prompt.md
 │       ├── senatus.discuss.prompt.md
+│       ├── senatus.dry-run.prompt.md
+│       ├── senatus.implement.prompt.md
 │       ├── senatus.inspire.prompt.md
 │       ├── senatus.new-topic.prompt.md
 │       ├── senatus.plan.prompt.md
-│       └── senatus.research.prompt.md
+│       ├── senatus.research.prompt.md
+│       └── senatus.summary.prompt.md
 ├── .specify/               # 文档模板
 │   ├── discuss-template.md      # 讨论文档模板
 │   ├── research-template.md     # 研究报告模板
@@ -118,14 +122,17 @@ senatus/
   - 业务逻辑分析
   - 技术实现方案
 
-### 4. 主题讨论 (`/senatus.discuss` 或 `/senatus.inspire`)
+### 4. 主题讨论 (`/senatus.discuss` 或 `/senatus.inspire` 或 `/senatus.dry-run`)
 ```bash
 /senatus.discuss 我们应该使用JWT还是Session进行身份验证？
 # 或者
 /senatus.inspire
+# 或者
+/senatus.dry-run
 ```
 - `/senatus.discuss`：针对具体问题进行讨论
 - `/senatus.inspire`：自动识别争议点并启发讨论
+- `/senatus.dry-run`：预演实现方案，模拟代码变更和影响
 - 所有讨论记录都会添加到 `discuss.md` 文件中
 - 记录格式：`D01 - 日期时间`，包含问题和结论
 
@@ -176,19 +183,17 @@ git add .
 - 将变更作为已完成任务添加到任务计划
 - 生成详细的实施记录
 
+### 9. 主题总结 (`/senatus.summary`)
+```bash
+/senatus.summary
+```
+- 生成当前主题的完整总结报告
+- 回顾关键技术决策和讨论结果
+- 汇总已完成的所有任务和实施记录
+- 分析项目现状和遗留问题
+- 为后续工作提供参考
+
 ## 命令详解
-
-### `/senatus.implement` - 执行任务（批量）
-**作用**：自动化批量执行待办任务项
-
-**输出**：
-- 更新的 `plan.md`（状态更新）
-- `implementation/[任务编号].md`（实施记录）
-
-**特点**：
-- 批量执行（最多5个任务）
-- 自动生成实施文档
-- 智能进度跟踪
 
 ### `/senatus.collect` - 收集手动变更
 **作用**：收集用户手动修改的代码变更并记录到框架中
@@ -250,6 +255,29 @@ git add .
 - 严格遵循项目宪法约束
 - 自动编号和时间戳记录
 
+### `/senatus.dry-run` - 预演实现
+**作用**：预演实现方案，模拟代码变更
+
+**输出**：在 `discuss.md` 中添加讨论记录
+
+**特点**：
+- 基于研究报告和讨论结果预演实现方案
+- 模拟分析需要修改的文件和代码结构
+- 评估实现的复杂度、风险和技术依赖
+- 验证技术方案的可行性
+
+### `/senatus.implement` - 执行任务（批量）
+**作用**：自动化批量执行待办任务项
+
+**输出**：
+- 更新的 `plan.md`（状态更新）
+- `implementation/[任务编号].md`（实施记录）
+
+**特点**：
+- 批量执行（最多5个任务）
+- 自动生成实施文档
+- 智能进度跟踪
+
 ### `/senatus.inspire` - 启发讨论
 **作用**：自动识别争议点，启发有价值的讨论
 
@@ -297,6 +325,17 @@ git add .
 - 相关文件和目录结构
 - 业务逻辑和技术实现
 
+### `/senatus.summary` - 主题总结
+**作用**：生成当前主题的完整总结报告
+
+**输出**：无（直接输出总结内容）
+
+**特点**：
+- 综合分析讨论记录、研究报告、任务计划和实施记录
+- 总结关键决策和技术方案
+- 汇总已完成的工作和成果
+- 识别遗留问题和改进空间
+
 ## 文档规范
 
 ### 编号系统
@@ -333,21 +372,28 @@ git add .
 # 5. 启发更多讨论点
 /senatus.inspire
 
-# 6. 生成任务计划
+# 6. 预演实现方案
+/senatus.dry-run
+
+# 7. 生成任务计划
 /senatus.plan
 
-# 7. 批量执行任务项（一次最多5个任务）
+# 8. 批量执行任务项（一次最多5个任务）
+# 8. 批量执行任务项（一次最多5个任务）
 /senatus.implement
 # 可重复执行直到所有任务完成
 /senatus.implement
 
-# 8. 修复问题（如需要）
+# 9. 修复问题（如需要）
 /senatus.correct 修复用户认证模块的配置问题
 
-# 9. 收集手动变更（如需要）
+# 10. 收集手动变更（如需要）
 # 手动修改代码...
 git add .
 /senatus.collect
+
+# 11. 生成主题总结
+/senatus.summary
 ```
 
 ### 生成的文件结构示例
@@ -355,6 +401,8 @@ git add .
 ```
 specify/
 ├── constitution.md
+├── knowledge/
+│   └── [知识文档].md
 └── 001-refactor-user-management/
     ├── discuss.md
     ├── research.md
